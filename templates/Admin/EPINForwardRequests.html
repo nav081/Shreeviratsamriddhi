@@ -1,0 +1,332 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{{Name}} : EPIN</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.1.7/css/fixedHeader.dataTables.min.css">
+  <link rel="stylesheet" href="{% static 'CSS/jquery.dataTables.min.css' %}">
+  <link rel="stylesheet" href="{% static 'CSS/Profile.css' %}">
+  <link rel="stylesheet" href="{% static 'AdminLteCSS/all.min.css' %}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="{% static 'AdminLteCSS/dataTables.bootstrap4.min.css' %}">
+  <link rel="stylesheet" href="{% static 'AdminLteCSS/responsive.bootstrap4.min.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'AdminLteCSS/adminlte.min.css' %}">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand-lg navbar-light bg-light">             
+      <a class="navbar-brand" data-widget="pushmenu" href="#" role="button"><i class="fa fa-bars"></i></a>      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="/Admin/EPINRequests">PIN Add Requests<span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link active" href="#">Forward Requests</a>
+        </div>
+      </div>
+    </nav>       
+ 
+  
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="{{Photo}}" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="" class="d-block">{{Name}}</a>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+            <a href="/Admin/Home" class="nav-link">
+              <i class="nav-icon fa fa-user"></i>
+              <p>
+                Dashboard                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/Admin/Inactive" class="nav-link">
+              <i class="nav-icon fa fa-user-secret"></i>
+              <p>
+                Inactive Users    
+                {% if Allusers == 0 %}              
+                
+                {% else %}
+                <span class="badge badge-warning navbar-badge">{{Allusers}}</span>  
+                {% endif %}        
+                     
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fa fa-key"></i>
+              <p>
+                E-PIN                
+              </p>
+            </a>
+          </li>          
+          <li class="nav-item">
+            <a href="/Admin/PLI" class="nav-link">
+              <i class="nav-icon fa fa-usd"></i>
+              <p>
+                Pre Launching Income               
+              </p>
+            </a>
+          </li>
+          
+          
+          <li class="nav-item">
+            <hr style="background: white;color: white;" />
+            <a href="/Account/Logout" class="nav-link">
+              <i class="nav-icon fa fa-sign-out"></i>
+              <p>
+                Logout                
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">            
+            <h1 class="m-0 text-dark">Forward PIN Requests</h1>            
+          </div><!-- /.col -->
+        <!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title" id="tabletitle">All Requests</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>PINS</th>
+                    <th>Name</th>
+                    <th>Request Date</th> 
+                    <th>Transaction ID</th>                  
+                    <th>View/Verify</th>                
+                  </tr>
+                  </thead>
+                  <tbody id="tbody">
+                    {% for req in Epins %}
+                    <tr>
+                      <td>{{req.PINCount}}</td>  
+                      <th>{{req.UserName}}</th>                    
+                      <td>{{req.RequestDate}}</td>
+                      <td>{{req.TransactionID}}</td>
+                      <td>
+                        <button type="button" class="btn btn-primary" onclick="View({{req.id}},{{req.UserMobile}})" data-toggle="modal" data-target="#exampleModal">
+                        View 
+                        </button>&nbsp;|&nbsp;
+                        <a href="/Admin/PINForwardVerified/{{req.id}}" class="btn btn-primary">Verify</a>&nbsp;|&nbsp;
+                        <a href="#" data-toggle="modal" data-target="#RejectModal" onclick='Reject({{req.id}},{{req.UserMobile}})' class="btn btn-primary">Reject</a>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>              
+                </table>
+              </div>
+            </div>
+          </div>        
+        </div>
+       
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          TotalPINS : <label id="total"></label><br>
+          PINS : <label id="PINCount"></label><br>
+          <hr />
+          <label>TO</label><br>
+          Name : <label id="recname"></label><br>
+          Username: <label id="username"></label><br>
+          <div class="col-lg-6" id="screen">
+          </div>
+        </div>
+        <div class="modal-footer">        
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="modal fade" id="RejectModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="RejectModalLabel"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="container">
+                <input type="hidden" id="setnum" value="" />
+                  <div class="form-group">
+                    <label>Reason To Reject <span class="small">*</span></label>
+                    <input type="text" id="reason" class="form-control" required />
+                    <span class="small" id="showmsg"></span>
+                  </div>
+                  <div class="form-group">
+                    <input type="button" value="Submit" id="subres" class="btn btn-Primary" style="background: blue;color: white;"/>
+                  </div>              
+              </div>            
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  <footer class="main-footer" >
+    Copyright &copy; 2020<a > Samarth India Pvt. Ltd </a>.
+    All rights reserved.
+    
+  </footer>
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+
+  </aside>
+
+  
+</div>
+
+
+</body>
+</html>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk="   crossorigin="anonymous"></script>
+<script src="{% static 'AdminLteJquery/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'AdminLteJquery/adminlte.js' %}"></script>
+<script src="{% static 'AdminLteJquery/Chart.min.js' %}"></script>
+<script src="{% static 'Jquery/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'AdminLteJquery/demo.js' %}"></script>
+<script src="{% static 'AdminLteJquery/dashboard3.js' %}"></script>
+<script src="{% static 'AdminLteJquery/Treeview.js' %}"></script>
+<script src="{% static 'AdminLteJquery/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'AdminLteJquery/dataTables.bootstrap4.min.js' %}"></script>
+<script src="{% static 'AdminLteJquery/dataTables.responsive.min.js' %}"></script>
+<script src="{% static 'AdminLteJquery/responsive.bootstrap4.js' %}"></script>
+
+<script>
+  function View(id,num){
+    $("#exampleModalLabel").text("");
+    $("#total").text("");
+    $("#PINCount").text("");
+    $("#trnsc").text("");
+    $("#screen").text("");
+    var myKeyVals = {Mob : num,ID:id}  
+    
+    
+    $.ajax({
+       url:"GETEPINForwardData",
+       type:'Get',
+       data:myKeyVals,
+       success:function(data){
+        $("#exampleModalLabel").text(data.name);
+        $("#total").text(data.total);
+        $("#PINCount").text(data.PINCount);
+        $("#recname").text(data.recname);
+        $("#username").text(data.username);
+       }
+     });
+  }
+ function Reject(id,num){
+  $("#RejectModalLabel").text("");
+  $("#setnum").val(id);
+  var myKeyVals = {Mob : num,ID:id}
+    $.ajax({
+       url:"GETEPINForwardData",
+       type:'Get',
+       data:myKeyVals,
+       success:function(data){
+        $("#RejectModalLabel").text(data.name);
+       }
+     });
+  }
+  $("#subres").click(function(){
+    var reason=$("#reason").val();
+    if(reason=="" || reason==null){      
+      $("#showmsg").text("Specify the Reason Please");
+      return false;
+    }
+    else{
+      $("#showmsg").text("");
+      var num=$("#setnum").val();
+      var myKeyVals = {Mob : num,Reason:reason};
+    $.ajax({
+       url:"PINForwardReject",
+       type:'GET',
+       data:myKeyVals,
+       success:function(data){
+        window.location.reload();
+       }
+     })
+    }
+  });
+  
+
+</script>

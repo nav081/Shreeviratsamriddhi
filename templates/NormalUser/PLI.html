@@ -1,0 +1,270 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{{Name}} : Pre-Launching Income</title>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.1.7/css/fixedHeader.dataTables.min.css">
+  <link rel="stylesheet" href="{% static 'CSS/jquery.dataTables.min.css' %}">
+  <link rel="stylesheet" href="{% static 'AdminLteCSS/all.min.css' %}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="{% static 'AdminLteCSS/dataTables.bootstrap4.min.css' %}">
+  <link rel="stylesheet" href="{% static 'AdminLteCSS/responsive.bootstrap4.min.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'AdminLteCSS/adminlte.min.css' %}">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fa fa-bars"></i></a>
+      </li>      
+    </ul>
+
+    <!-- SEARCH FORM -->
+    
+
+    <!-- Right navbar links -->
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="{{Photo}}" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="" class="d-block">{{Name}}</a>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+            <a href="/NormalUser/Home" class="nav-link">
+              <i class="nav-icon fa fa-user"></i>
+              <p>
+                Dashboard                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/NormalUser/Profile" class="nav-link">
+              <i class="nav-icon fa fa-user-secret"></i>
+              <p>
+                Profile                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/NormalUser/EPIN" class="nav-link">
+              <i class="nav-icon fa fa-key"></i>
+              <p>
+                E-PIN                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/NormalUser/Team" class="nav-link">
+              <i class="nav-icon fa fa-th"></i>
+              <p>
+                Team                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/NormalUser/SIA" class="nav-link">
+              <i class="nav-icon fa fa-star"></i>
+              <p>
+                Single leg Achievement                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/NormalUser/Income" class="nav-link">
+              <i class="nav-icon fa fa-credit-card"></i>
+              <p>
+                Income                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/NormalUser/Withdraw" class="nav-link">
+              <i class="nav-icon fa fa-credit-card-alt"></i>
+              <p>
+                Withdraw                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link  active">
+              <i class="nav-icon fa fa-usd"></i>
+              <p>
+                Pre Launching Income      <sup class="badge badge-warning navbar-badge">Offer</sup>         
+              </p>
+            </a>
+          </li>
+          
+          
+          <li class="nav-item">
+            <hr style="background: white;color: white;" />
+            <a href="/Account/Logout" class="nav-link">
+              <i class="nav-icon fa fa-sign-out"></i>
+              <p>
+                Logout                
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Pre launching Income / Offers</h1>
+          </div><!-- /.col -->
+        <!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+      
+      <div class="container-fluid"> 
+        <div class="card">
+          <div class="card-body">
+            <table class="table table-dark">
+              <th><i class="fa fa-industry"></i></th>
+              <th>Within 21 days of company launch get a premium android phone or cash (5000.00) with joining of  21 I’d.</th>
+              <th></th>
+              
+                <tr>
+                <th><i class="fa fa-user-o"></i></th>
+                <th>Within 51 days of company launch get a tour with  joining of 51 I’d.</th>
+                <th></th>
+                </tr>
+
+                <tr>
+                  <th><i class="fa fa-handshake-o"></i></th>
+                  <th>Within 101 days of company launch get a Bike or cash (51000.00) with joining of 151 I’d.</th>
+                  <th></th>
+                </tr>
+
+              
+              
+              
+
+
+            </table>
+          </div>
+
+        </div>
+
+        
+      </div>
+    </div>
+  </div>
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+
+  </aside>
+
+  <footer class="main-footer" >
+    Copyright &copy; 2020<a > Samarth India Pvt. Ltd </a>.
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      Designed And Developed by : <a href="mailto:nicenavneet99@gmail.com">Navneet Yadav</a>
+    </div>
+  </footer>
+</div>
+
+
+</body>
+</html>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="{% static 'Jquery/jquery.min.js' %}"></script>
+<script src="{% static 'AdminLteJquery/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'AdminLteJquery/adminlte.js' %}"></script>
+<script src="{% static 'AdminLteJquery/Chart.min.js' %}"></script>
+<script src="{% static 'Jquery/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'AdminLteJquery/demo.js' %}"></script>
+<script src="{% static 'AdminLteJquery/dashboard3.js' %}"></script>
+<script src="{% static 'AdminLteJquery/Treeview.js' %}"></script>
+<script src="{% static 'AdminLteJquery/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'AdminLteJquery/dataTables.bootstrap4.min.js' %}"></script>
+<script src="{% static 'AdminLteJquery/dataTables.responsive.min.js' %}"></script>
+<script src="{% static 'AdminLteJquery/responsive.bootstrap4.js' %}"></script>
+
+<script>
+    $("#copy").click(function(){
+      
+      var val=$("#refid").val().select();
+      document.execCommand("copy");
+      alert(val);
+    });
+    GetData(1,{{MobileNumber}});
+    function GetData(id,number){
+      var title=$("#tabletitle");
+      if(id=="1"){
+        title.text("All Registered")
+      }
+      else if(id=="2"){
+        title.text("This Month Registered")
+      }
+      else if(id=="3"){
+        title.text("Today Registered")
+      }
+      else if(id=="4"){
+        title.text("Premium Registered")
+      }
+      $('#example1 tbody').empty();
+    var $j = jQuery.noConflict();
+     var myKeyVals = { ID : id, Mob : number}     
+     $.ajax({
+       url:"GetUserlist",
+       type:'Get',
+       data:myKeyVals,
+       success:function(data){
+        for (i = 0; i < data.length; i++) {
+          $("#example1").append("<tr><td>"+data[i].fields['First_Name']+" "+data[i].fields['Last_Name']+"</td><td>"+data[i].fields['CreationDate']+"</td><td>"+data[i].fields['Username']+"</td></tr>");
+        }       
+       }
+     })
+  }
+  $(function () {
+    $("#example1").bootstrapTable('refresh')
+  });
+
+
+
+
+
+</script>

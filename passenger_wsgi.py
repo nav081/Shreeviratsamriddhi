@@ -1,0 +1,1 @@
+from VandeBharat.wsgi import application

@@ -1,0 +1,632 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{{Name}} : Profile</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.1.7/css/fixedHeader.dataTables.min.css">
+  <link rel="stylesheet" href="{% static 'CSS/jquery.dataTables.min.css' %}">
+  <link rel="stylesheet" href="{% static 'CSS/Profile.css' %}">
+  <link rel="stylesheet" href="{% static 'AdminLteCSS/all.min.css' %}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="{% static 'AdminLteCSS/dataTables.bootstrap4.min.css' %}">
+  <link rel="stylesheet" href="{% static 'AdminLteCSS/responsive.bootstrap4.min.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'AdminLteCSS/adminlte.min.css' %}">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand-lg navbar-light bg-light">             
+      <a class="navbar-brand" data-widget="pushmenu" href="#" role="button"><i class="fa fa-bars"></i></a>      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="#">Profile<span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="/NormalUser/ProfileKYC">KYC</a>
+          <a class="nav-item nav-link" href="/NormalUser/ChangePassword">Change Password</a>
+          <a class="nav-item nav-link" href="/NormalUser/TransactionPassword">Transaction Password</a>
+        </div>
+      </div>
+    </nav>       
+ 
+  
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="{{Photo}}" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="" class="d-block">{{Name}}</a>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+            <a href="/NormalUser/Home" class="nav-link">
+              <i class="nav-icon fa fa-user"></i>
+              <p>
+                Dashboard                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fa fa-user-secret"></i>
+              <p>
+                Profile                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/NormalUser/EPIN" class="nav-link">
+              <i class="nav-icon fa fa-key"></i>
+              <p>
+                E-PIN                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/NormalUser/Team" class="nav-link">
+              <i class="nav-icon fa fa-th"></i>
+              <p>
+                Team                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/NormalUser/SIA" class="nav-link">
+              <i class="nav-icon fa fa-star"></i>
+              <p>
+                Single leg Achievement                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/NormalUser/Income" class="nav-link">
+              <i class="nav-icon fa fa-credit-card"></i>
+              <p>
+                Income                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/NormalUser/Withdraw" class="nav-link">
+              <i class="nav-icon fa fa-credit-card-alt"></i>
+              <p>
+                Withdraw                
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/NormalUser/PLI" class="nav-link">
+              <i class="nav-icon fa fa-usd"></i>
+              <p>
+                Pre Launching Income    <sup class="badge badge-warning navbar-badge">Offer</sup>           
+              </p>
+            </a>
+          </li>
+          
+          
+          <li class="nav-item">
+            <hr style="background: white;color: white;" />
+            <a href="/Account/Logout" class="nav-link">
+              <i class="nav-icon fa fa-sign-out"></i>
+              <p>
+                Logout                
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            
+            <h1 class="m-0 text-dark">Profile</h1>
+            
+            
+          </div><!-- /.col -->
+        <!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+        
+        <form id="regForm" action="/NormalUser/Profile/UpdateProfile" method="POST">
+          {% csrf_token %}
+          <div class="card">
+            <div class="col-lg-12" style="padding-left:20px;padding-right: 20px;padding: 50px;">
+              {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <p{% if message.tags %} class="{{ message.tags }}"{% endif %} style="color: green;">{{ message }}</p>
+    {% endfor %}
+</ul>
+{% endif %}   
+<div class="form-group" style="margin-left:-5px;">
+  <div class="col-lg-12">
+    <div class="row">
+      <div class="col-lg-3">
+        <h3 style="color: rgb(0, 0, 0);font-size: 20px;">Sponsored By</h3>
+      </div>
+      <div class="col-lg-4">
+        <input type="text" class="form-control" value="{{REfID}}" readonly />
+      </div>
+    </div>
+  </div>
+</div>
+              
+              <div class="tab"><label style="color: cornflowerblue;">Personal Info : </label>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>First Name</label>
+                      <input placeholder="First name..." class="form-control" value="{{FirstName}}" name="firstname" required/>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>Last Name</label>
+                      <input placeholder="Last name..." class="form-control" value="{{LastName}}" name="lastname" required/>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>Father's Name</label>
+                      <input placeholder="Last name..." class="form-control" value="{{FName}}" name="fname" required/>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>Date of Birth</label>
+                      <input placeholder="Last name..." id="datepicker" class="form-control" value="{{DOB}}" name="DOB" required/>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>Gender</label><br /> 
+                      <select class="form-control" name="gender" value="{{Gender}}" required>
+                        <option value="{{Gender}}">{{Gender}}</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>Marital Status</label><br /> 
+                      <select class="form-control" name="MaritalStatus" value="{{MaritalStatus}}" required>                        
+                        <option value="{{MaritalStatus}}">{{MaritalStatus}}</option>
+                        <option value="Single">Single</option>
+                        <option value="Married">Married</option>
+                        <option value="UnMarried">UnMarried</option>
+                        <option value="Divorcee">Divorcee</option>
+                        <option value="In a Relationship">In a Relationship</option>
+                        </select>
+                    </div>
+                  </div>
+                </div>              
+              </div>
+              <div class="tab"><label style="color: cornflowerblue;">Contact Details : </label>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>Address Line 1</label>
+                      <input placeholder="" class="form-control" value="{{Addline1}}" name="adline1" required/>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>Address Line 2</label>
+                      <input placeholder="" class="form-control" value="{{Addline2}}" name="adline2" required/>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>District</label>
+                      <input placeholder="" class="form-control" value="{{District}}" name="district" required/>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>State</label>
+                      <select class="form-control" name="state" value="{{State}}">
+                              <option value="{{State}}">{{State}}</option>
+                              <option value="Andhra Pradesh">Andhra Pradesh</option>
+                              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                              <option value="Assam">Assam</option>
+                              <option value="Bihar">Bihar</option> 
+                              <option value="Chhattisgarh">Chhattisgarh</option>
+                              <option value="Goa">Goa</option>
+                              <option value="Gujarat">Gujrat</option>
+                              <option value="Haryana">Haryana</option
+                              <option value="Himachal Pradesh">Himachal Pradesh</option>
+                              <option value="Jharkhand">Jharkhand</option>
+                              <option value="Karnataka">Karnataka</option>
+                              <option value="Kerala">Kerala</option>
+                              <option value="Madhya Pradesh">Madhya Pradesh</option>
+                              <option value="Maharashtra">Maharashtra</option>
+                              <option value="Manipur">Manipur</option>
+                              <option value="Meghalaya">Meghalaya</option>
+                              <option value="Mizoram">Mizoram</option>
+                              <option value="Nagaland">Nagaland</option>
+                              <option value="Odisha">Odisha</option>
+                              <option value="Punjab">Punjab</option>
+                              <option value="Rajasthan">Rajasthan</option>
+                              <option value="Sikkim">Sikkim</option>
+                              <option value="Tamil Nadu">Tamil Nadu</option>
+                              <option value="Telangana">Telangana</option>
+                              <option value="Tripura">Tripura</option>
+                              <option value="Uttar Pradesh">Uttar pradesh</option>
+                              <option value="Uttarakhand">Uttarakhand</option>
+                              <option value="West Bengal">West Bengal</option>
+                              <option value="Andmaan Nicobar ">Andmaan Nicobar</option> 
+                        </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>Country</label>
+                      <select class="form-control" value="{{Country}}" name="country">
+                              <option value="{{Country}}">{{Country}}</option>
+                              <option value="India "> India</option>
+                              <option value="China"> China</option>
+                              <option value="United stste "> United stste </option>
+                              <option value="Indonesia"> Indonesia </option>
+                              <option value="Pakistan "> Pakistan </option>
+                              <option value="Brazil"> Brazil </option>
+                              <option value="Nigeria"> Nigeria </option>
+                              <option value="Japan"> Japan </option>
+                              <option value="Mexio"> Mexio </option>
+                              <option value="Russia"> Russia </option>
+                              <option value="Bangladesh"> Bangladesh</option>
+                              <option value="Ethiopia"> Ethiopia</option>
+                              <option value="Philippines"> Philippines</option>
+                              <option value="Egypt"> Egypt</option>
+                              <option value="Vietnam"> Vietnam</option>
+                              <option value="DR Congo"> DR Congo</option>
+                              <option value="Turkey"> Turkey</option>
+                              <option value="Germany"> Germany</option>
+                              <option value="Thailand"> Thailand</option>
+                              <option value="United Kingdom"> United Kingdom</option>
+                              <option value="France"> France</option>
+                              <option value="Italy"> Italy </option>
+                              <option value="	Tanzania"> Tanzania </option>
+                              <option value="South Africa"> South Africa</option>
+                              <option value="Myanmar"> Myanmar</option>
+                              <option value="Kenya"> Kenya</option>
+                              <option value="South Korea"> South Korea</option>
+                              <option value="Colombia"> Colombia</option>
+                              <option value="Spain"> Spain</option>
+                              <option value="Uganda"> Uganda </option>
+                              <option value="Argentina"> Argentina</option>
+                              <option value="Algeria"> Algeria</option>
+                              <option value="Sudan"> Sudan</option>
+                              <option value="Ukraine"> Ukraine</option>
+                              <option value="Iraq"> Iraq</option>
+                              <option value="Afghanistan"> Afghanistan</option>
+                              <option value="Poland"> Poland </option>
+                              <option value="Canada"> Canada</option>
+                              <option value="Morocco"> Morocco</option>
+                              <option value="Saudi Arabia"> Saudi Arabia</option>
+                              <option value="Uzbekistan"> Uzbekistan</option>
+                              <option value="Peru"> Peru</option>
+                              <option value="Angola"> Angola</option>
+                              <option value="Malaysia"> Malaysia</option>
+                              <option value="Mozambique"> Mozambique</option>
+                              <option value="Myanmar"> Myanmar </option>
+                              <option value="Namibia"> Namibia </option>
+                              <option value="Nauru">  Nauru</option>
+                              <option value="Nepal">  Nepal</option>
+                              <option value="Netherlands"> Netherlands</option>
+                              <option value="New zealand"> New zealand</option>
+                              <option value="Nicaragua"> Nicaragua</option>
+                              <option value="Niger "> Niger </option>
+                              <option value="Nigeria"> Nigeria</option>
+                              <option value="North Korea"> North Korea</option>
+                              <option value="North Macedonia">  North Macedonia</option>
+                              <option value="Norwoy"> Norwoy</option>
+                              <option value="Oman"> Oman </option>
+                              <option value="Pakistan"> Pakistan </option>
+                              <option value="Palau"> Palau </option>
+                              <option value="Palestine state "> Palestine State</option>
+                              <option value="Panama"> Panama</option>
+                              <option value="Papua new Guinea">  Papua new Guinea</option>
+                              <option value="Paraguay"> Paraguay</option>
+                              <option value="Peru"> Peru</option>
+                              <option value="Philippines">Philippines</option>
+                              <option value="Poland" > Poland </option>
+                              <option value="Portugal">Portugal</option>
+                              
+                              <option value="Qatar"> Qatar </option>
+                              
+                              <option value="Romania"> Romania </option>
+                              <option value ="Russia"> Russia </Option>
+                              <option value ="Rwanda"> Rwanda </option>
+                              <option value ="Saint kitts and Nevis"> Saint Kitts Nevis </option>
+                              <option value ="Saint  lucia "> Saint lucia  </option>
+                              <option value ="Samoa ">  Samoa </option>
+                              
+                              <option value ="San Marino">San Marino</option>
+                              <option value ="Sao Tome and  Principe">  Sao Tome and Principe </option>
+                              <option value ="Saudi  Arabia ">  Saudi Arabia  </option>
+                              <option value ="Senegal "> Senegal </option>
+                              <option value ="Serbia"> Serbia </option>
+                              <option value ="Seychelles "> Seychelles </option>
+                        </select>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>Pincode</label>
+                      <input type="number" class="form-control" value={{pincode}} name="pincode" required/>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>Mobile Number</label>
+                      <input placeholder=""  class="form-control" value="{{MobileNumber}}" name="mobnum" readonly/>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>Email ID</label>
+                      <input placeholder="" type="email"  value="{{Email}}" class="form-control" name="email" readonly/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab">
+                <label style="color: cornflowerblue;">Nominee Details : </label>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>Nominee Name</label>
+                      <input placeholder="" class="form-control" value="{{NomineeName}}" name="nomineename" required/>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>Relation</label>
+                      <select class="form-control" value="{{Nomerel}}" name="nomineerelation" required>
+                        <option value="{{Nomerel}}">{{Nomerel}}</option>
+                        <option value="Son">Son</option>
+                        <option value="Daughter">Daughter</option>
+                        <option value="Wife">Wife</option>
+                        <option value="Husband">Husband</option>
+                        <option value="Father">Father</option>
+                        <option value="Mother">Mother</option>
+                        <option value="Brother">Brother</option>
+                        <option value="Sister">Sister</option>
+                        <option value="GirlFriend">GirlFriend</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <label style="color: cornflowerblue;">Your Bank Details : </label>
+                <div class="row">                  
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>Bank Name</label>
+                      <input placeholder="" class="form-control" value="{{BankName}}" name="bankname" required/>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">                      
+                      <div class="form-group">
+                        <label>Branch</label>
+                        <input placeholder="" class="form-control" value="{{BankBranch}}" name="bankbranch" required/>
+                      </div>
+                  </div>
+                </div>
+                  <div class="row">                  
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <label>Account Number</label>
+                        <input placeholder="" class="form-control" value="{{AccountNummber}}" name="Accnum" required/>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">                      
+                        <div class="form-group">
+                          <label>IFSC Code</label>
+                          <input placeholder="" class="form-control" value="{{IFSCcode}}" name="IFSC" required/>
+                        </div>
+                    </div>
+                  </div>                      
+              </div>
+              <div class="tab">
+                <label style="color: cornflowerblue;">Identity Verification : </label>
+                <div class="row">                  
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label>Adhaar Number</label>
+                      <input placeholder="" class="form-control" value="{{Adhaar}}" name="adhaar" required/>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">                      
+                      <div class="form-group">
+                        <label>PAN Number</label>
+                        <input placeholder="" class="form-control" value="{{PANNumber}}" name="PAN" required/>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div style="overflow:auto;">
+                <div style="float:right;">
+                  <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                  <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                </div>
+              </div>
+              <div style="text-align:center;margin-top:40px;">
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+                <span class="step"></span>
+              </div>
+            </div>
+
+          </div>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer class="main-footer" >
+    Copyright &copy; 2020<a > Samarth India Pvt. Ltd </a>.
+    All rights reserved.
+    
+  </footer>
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+
+  </aside>
+
+  
+</div>
+
+
+</body>
+</html>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk="   crossorigin="anonymous"></script>
+<script src="{% static 'AdminLteJquery/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'AdminLteJquery/adminlte.js' %}"></script>
+<script src="{% static 'AdminLteJquery/Chart.min.js' %}"></script>
+<script src="{% static 'Jquery/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'AdminLteJquery/demo.js' %}"></script>
+<script src="{% static 'AdminLteJquery/dashboard3.js' %}"></script>
+<script src="{% static 'AdminLteJquery/Treeview.js' %}"></script>
+<script src="{% static 'AdminLteJquery/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'AdminLteJquery/dataTables.bootstrap4.min.js' %}"></script>
+<script src="{% static 'AdminLteJquery/dataTables.responsive.min.js' %}"></script>
+<script src="{% static 'AdminLteJquery/responsive.bootstrap4.js' %}"></script>
+
+<script>
+  var currentTab = 0; // Current tab is set to be the first tab (0)
+  showTab(currentTab); // Display the current tab
+  
+  function showTab(n) {
+    // This function will display the specified tab of the form...
+    var x = document.getElementsByClassName("tab");
+    x[n].style.display = "block";
+    //... and fix the Previous/Next buttons:
+    if (n == 0) {
+      document.getElementById("prevBtn").style.display = "none";
+    } else {
+      document.getElementById("prevBtn").style.display = "inline";
+    }
+    if (n == (x.length - 1)) {
+      document.getElementById("nextBtn").innerHTML = "Submit";
+    } else {
+      document.getElementById("nextBtn").innerHTML = "Next";
+    }
+    //... and run a function that will display the correct step indicator:
+    fixStepIndicator(n)
+  }
+  
+  function nextPrev(n) {
+    // This function will figure out which tab to display
+    var x = document.getElementsByClassName("tab");
+    // Exit the function if any field in the current tab is invalid:
+    if (n == 1 && !validateForm()) return false;
+    // Hide the current tab:
+    x[currentTab].style.display = "none";
+    // Increase or decrease the current tab by 1:
+    currentTab = currentTab + n;
+    // if you have reached the end of the form...
+    if (currentTab >= x.length) {
+      // ... the form gets submitted:
+      document.getElementById("regForm").submit();
+      return false;
+    }
+    // Otherwise, display the correct tab:
+    showTab(currentTab);
+  }
+  
+  function validateForm() {
+    // This function deals with validation of the form fields
+    var x, y, i, valid = true;
+    x = document.getElementsByClassName("tab");
+    y = x[currentTab].getElementsByTagName("input");
+    // A loop that checks every input field in the current tab:
+    for (i = 0; i < y.length; i++) {
+      // If a field is empty...
+      if (y[i].value == "") {
+        // add an "invalid" class to the field:
+        y[i].className += " invalid";
+        // and set the current valid status to false
+        valid = false;
+      }
+    }
+    // If the valid status is true, mark the step as finished and valid:
+    if (valid) {
+      document.getElementsByClassName("step")[currentTab].className += " finish";
+    }
+    return valid; // return the valid status
+  }
+  
+  function fixStepIndicator(n) {
+    // This function removes the "active" class of all steps...
+    var i, x = document.getElementsByClassName("step");
+    for (i = 0; i < x.length; i++) {
+      x[i].className = x[i].className.replace(" active", "");
+    }
+    //... and adds the "active" class on the current step:
+    x[n].className += " active";
+  }
+  
+    $( "#datepicker" ).datepicker({
+      changeYear:true,
+      changeMonth:true,
+      dateFormat: 'dd-mm-yy',
+      yearRange:'1965:2022'
+
+    });
+  
+  </script>

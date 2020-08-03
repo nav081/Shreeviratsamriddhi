@@ -1,0 +1,156 @@
+{% load static %}
+<html>
+    <head>
+        <title>Registration</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="{% static 'Bootstrap/bootstrap.min.css' %}" integrity="" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+    </head>
+    <body style="background: #0790d4;">
+        <div class="Registration" >
+                
+           
+            <div class="wrapper fadeInDown">
+              
+                <div id="formContent">
+                  
+                  <h2 class="active">Registration</h2>
+              
+                  <!-- Icon -->
+                  
+              
+                  <!-- Login Form -->
+                  <form action="/Account/Create" method="POST">
+                    {% csrf_token %}
+                      <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col">                                    
+                              <input type="text" class="form-control" name="firstname" placeholder="First name" required>
+                            </div>
+                            <div class="col">                                    
+                              <input type="text" class="form-control" name="midname" placeholder="Middle name">
+                            </div>
+                            <div class="col">                                    
+                              <input type="text" class="form-control" name="lastname" placeholder="Last name" >
+                            </div>
+                          </div>
+                          <div class="row">                                
+                            <div class="col">
+                                <label>Gender</label> &nbsp; : &nbsp;
+                              <input type="radio" class="radio"  name="Gender"  value="Male" required>&nbsp;&nbsp;&nbsp;<label>Male</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              <input type="radio"  class="radio" name="Gender" value="Female" required>&nbsp;&nbsp;&nbsp;<label>Female</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              <input type="radio" class="radio" name="Gender" value="Other" required>&nbsp;&nbsp;&nbsp;<label>Other</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </div>
+                            
+                          </div>
+                          <div class="row">                                
+                            <div class="col">                                
+                              <label>E-mail</label>
+                            </div>                            
+                          </div>
+                          <div class="row">                                
+                            <div class="col">                                
+                              <input type="email" class="form-control" name="email" placeholder="abc@mail.com" required>
+                            </div>                            
+                          </div>
+                          <div class="row">                                
+                            <div class="col">                                
+                              <label>Mobile Number</label>
+                            </div>                            
+                          </div>
+                          <div class="row">  
+                            <div class="col">                                   
+                              <input type="number" class="form-control" maxlength="10" onKeyPress="if(this.value.length==10) return false;" name="number" placeholder="99XXXXXXXX" required>
+                            </div>
+                          </div>
+                          
+                          
+                          <div class="row">
+                            
+                              <div class="col">
+                                
+                                <input type="text" value="{{refid}}" class="form-control" id="refID" name="RefID" readonly/>
+                              </div>
+                              <div class="col">                                
+                                <input type="text" value="{{name}}" class="form-control" id="recname"  readonly/>                       
+                              </div>
+                          </div>
+                          <div class="row">  
+                            <div class="col">                                   
+                              <input type="number" class="form-control" name="AdhaarID" placeholder="Adhaar ID" required/>       
+                            </div>
+                          </div>
+                          <div class="row">  
+                            <div class="col">                                   
+                              <input type="hidden" value="None" class="form-control" name="House" placeholder="Address Line1" required>
+                            </div>
+                          </div>
+                          <div class="row">  
+                            <div class="col">                                   
+                              <input type="hidden" value="None" class="form-control" name="Street" placeholder="Address Line2" value="  ">
+                            </div>
+                          </div>
+                          <div class="row">
+
+                            <div class="col">                                   
+                              <input type="hidden" value="None" class="form-control" name="City" placeholder="City" required>
+                            </div>
+                            <div class="col">                                    
+                              <input type="hidden" value="None" class="form-control" name="District" placeholder="District" required>
+                            </div>
+                            <div class="col">                                   
+                              <input type="hidden" value="None" class="form-control" name="Block" placeholder="PIN" required>
+                            </div>
+                                                                                          
+                          </div>
+                         <div class="row">
+                          <div class="col">
+                            <input type="hidden" value="None" class="form-control" name="state" placeholder="state" required>
+                            
+                          </div> 
+                          <div class="col">
+                            <input type="hidden" value="India" name="country" required>
+                             
+                          </div>  
+                         </div>
+                      </div>
+                      <input type="submit" class="fadeIn fourth" value="Register"><br>
+                      
+                      
+                    
+                    
+                  </form>
+                  <div id="formFooter">
+                    
+                    <a class="underlineHover" href="/">Home</a>&nbsp; | &nbsp;<a class="click here" href="/Account/Login">already registered ?</a>
+                    
+                    
+                  </div>
+              
+                  <!-- Remind Passowrd -->
+                  
+              
+                </div>
+              </div>
+           
+          </div>
+    </body>
+</html>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk="   crossorigin="anonymous"></script>
+<script>
+$("#refID").keyup(function () {
+      var userid=$("#refID").val();
+      var myKeyVals = { ID : userid}     
+    $.ajax({
+       url:"GetREfName",
+       type:'Get',
+       data:myKeyVals,
+       success:function(data){
+        $("#recname").val(data.name);
+      }
+     });
+    });
+
+</script>

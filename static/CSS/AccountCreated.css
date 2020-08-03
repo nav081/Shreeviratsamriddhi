@@ -1,0 +1,36 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper{
+    margin-top: 10%;
+}
+.Congratulations_box{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);   
+    text-align: center;
+    background: rgb(247, 247, 247);
+    width: 80%;
+    height: 80%;
+    border-radius: 5px;
+    box-shadow: 20px 20px 20px gray;
+}
+h1{
+    color:rgb(64, 154, 206);
+    font-weight: bold;
+}
+h3{
+    color: rgb(228, 110, 55);
+}
+p{
+    color: rgb(80, 80, 80);
+    font-weight: 900;
+}
+a{
+    color: chocolate;
+    font-weight: bold;
+    font-size: 18px;
+}

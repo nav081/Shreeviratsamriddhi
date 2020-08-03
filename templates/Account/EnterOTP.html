@@ -1,0 +1,37 @@
+{% load static %}
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="{% static 'CSS/Login.css' %}">
+    </head>
+    <body>
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
+              <!-- Tabs Titles -->
+              <h2 class="active"> Reset Password </h2><br>
+              
+              <!-- Icon -->
+              <div class="fadeIn first">
+                <img src="https://www.vippng.com/png/detail/355-3554387_create-digital-profile-icon-blue-profile-icon-png.png" id="icon" alt="User Icon" />
+              </div>
+              
+              <!-- Login Form -->
+              <form action="/Account/VerifyOTP" method="POST">
+                {% csrf_token %}
+                {{error}}<br>
+                {{Name}}
+                <input type="text"  class="fadeIn third" value={{MobileNumber}} name="MobileNumber"  readonly>               
+                <input type="hidden" id="password" value={{OTP}} class="fadeIn third" name="OTP" >
+                <input type="hidden" id="password" value={{Name}} class="fadeIn third" name="name" >
+                <input type="number" id="password" class="fadeIn third" name="UserOTP" placeholder="OTP" required>
+                <input type="submit" class="fadeIn fourth" value="Verify and Send Password">
+              </form>          
+              <!-- Remind Passowrd -->
+              <div id="formFooter">
+                <a class="underlineHover" href="\Account\Login">Login</a>&nbsp; | &nbsp;
+                <a class="underlineHover" href="/">Home</a>
+              </div>          
+            </div>
+          </div>
+    </body>
+</html>

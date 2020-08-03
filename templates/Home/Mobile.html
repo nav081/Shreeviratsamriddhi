@@ -1,0 +1,233 @@
+{% load static %}
+<html>
+    <head>     
+            <title>SVS</title>           
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity=""/>
+            <link rel="stylesheet" href="{% static 'Bootstrap/bootstrap.min.css' %}" integrity="" crossorigin="anonymous"> 
+			<link rel="stylesheet" href="{% static 'CSS/Mobile.css' %}" >
+			<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+            
+    </head>
+    <body>
+      
+
+	<div class="mainContainer">
+		<header>
+			<a href="#" class="logo">Shree Virat Samriddhi</a>
+			<a href="#" class="menuBtn">
+				<span class="lines"></span>
+			</a>
+			<nav class="mainMenu">
+				<ul>
+					<li>
+						<a href="#AboutU">About Us</a>
+					</li>
+					<li>
+						<a href="/contact">Contact Us</a>
+					</li>
+					<li>
+						<a href="/Services">Services</a>
+					</li>
+					<li>
+						<a href="/Account/Login">Login</a>
+					</li>
+					<li>
+						<a href="/Account/Registration" class="suBtn">Sign Up</a>
+					</li>
+				</ul>
+			</nav>
+		</header>		
+    <div class="banner"></div>
+    <div class="container">
+      
+      <div class="row">
+        <div class="col-sm-3">
+          <a href="#" class="fa fa-facebook"></a>
+        </div>
+        <div class="col-sm-3">
+          <a href="#" class="fa fa-twitter"></a>
+        </div>
+        <div class="col-sm-3">
+          <a href="#" class="fa fa-google"></a>
+        </div>
+        <div class="col-sm-3">
+          <a href="#" class="fa fa-linkedin"></a>
+        </div>
+	  </div> 
+	  
+      
+      
+      
+	</div>
+	<div class="col-lg-12">
+		<div class="card" data-aos="fade-down">
+			
+			<div class="card-body">
+			  <h5 class="card-title" style="font-size:40px;font-weight: bold;">ABOUT US:</h5>
+			  <p class="card-text" style="font-size:30px">We reach to every family with such a aim that cares about your health and wealth.</p>
+			</div>
+			<ul class="list-group list-group-flush">
+			  <li class="list-group-item" style="font-size:30px"><h2>OUR VISION</h2>
+				  <p style="font-size:30px">To provide the best quality and good service in lowest possible price.SHREE VIRAT SAMRIDDHI
+					DISTRIBUTION INDIA PVT.LTD committed to maintaining Quality ,superiority,respect,and
+					intergrity in all aspects of our operations and our professional business behavior
+					We try to reflect and highest moral values of our relationship with members and franchises
+					.With our clients setting new standards for both
+					of our organizations, redefining the digital industry in india and abroad. </p>
+			  </li>
+			  
+			</ul>
+			<div class="card-body">
+			  <a href="/Account/Registration" class="join">Join US</a>
+			  
+			</div>
+		  </div>			
+		</div>
+	  
+	</div>
+	<center style="font-size:40px;margin-top: 60px;margin-bottom: 60px;font-weight: bold;">KNOW MORE ABOUT US</ABbr></center>
+	<div class="col-lg-12" style="padding: 0px 50px 0px 50px;">
+		
+		<div class="card" data-aos="flip-left">
+			<div class="card-title" style="font-size:36px;color: rgb(102, 102, 102);padding: 15px;">How can we help you to grow?</div>
+			<div class="backg">
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+			</div>
+			<div class="card-body " style="font-size:28px;">
+				 natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+			</div>
+		</div>
+		<div class="card" data-aos="flip-right" style="margin-top: 30px;">
+			<div class="card-title" style="font-size:36px;color: rgb(102, 102, 102);padding: 15px;">Why us?</div>
+			<div class="backg1">
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+			</div>
+			<div class="card-body " style="font-size:28px;">
+				 natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+			</div>
+		</div>	
+		<center style="font-size:40px;margin-top: 60px;margin-bottom: 60px;font-weight: bold;">Featured Plans</center>
+		<table class="table">
+			<thead class="thead-dark">
+			  <tr>
+				<th scope="col">Thumbnail</th>
+				<th scope="col">Description</th>
+				<th scope="col">Download</th>				
+			  </tr>
+			</thead>
+			<tbody>
+			{% for val in offerlist %}
+			  <tr>
+					<td><img src="{{val.Image.url}}"  width="60px" height="60px class="rounded-circle"></td>
+					<td><h2>{{val.Desc}}</h2></td>
+					<td><a href="{{val.File.url}}" ><i class="fa fa-download" aria-hidden="true"></i></a></td>
+			  </tr>
+			{% endfor %}
+			</tbody>
+		  </table>
+		  
+	</div>
+	<div id="kaalipatti">
+		<table width="100%">
+			<tr>
+				<td>
+					&nbsp;
+				</td>
+				<td>
+					<button onclick="topFunction()" id="myBtn" style="color:white" title="Go to top">Go to top</button>
+				</td>
+			</tr>
+		</table>
+		
+		<hr  style="color: white; background: white;"/>
+		<table width="100%">
+			<tr>
+				<td width="50%">
+					<p style="color: white;font-size: 36px;padding: 10px;">Address:</p>
+				</td>
+				<td width="50%">
+					<p style="color: white;font-size: 36px;padding: 10px;">Contact Us:</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p style="color: white;font-size: x-large;padding: 10px;">Ews-223,raptinagar behind b.b.singh sports collage,raptinagar phase-4,medical collage road gorakhpur utter pradesh-273003</p>
+				</td>
+				<td>
+					<ul style="color: white;font-size: x-large;padding: 10px;">
+						<li>Mobile:+91-7779959595</li>
+						<li>Email:admin@shreeviratsamriddhi.in</li>
+					</ul>
+				</td>
+			</tr>
+		</table>
+	
+	
+	</div>
+	
+	
+		
+	
+	
+	  
+	  
+	
+
+
+
+  </body>
+</html>
+<script src="{% static 'Jquery/jquery-3.2.1.slim.min.js' %}" integrity="" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script type="text/javascript">
+function topFunction() {
+	  document.body.scrollTop = 0;
+	  document.documentElement.scrollTop = 0;
+	}
+$(document).ready(function(){
+	AOS.init();
+	// menu click event
+	$('.menuBtn').click(function() {
+		$(this).toggleClass('act');
+			if($(this).hasClass('act')) {
+				$('.mainMenu').addClass('act');
+			}
+			else {
+				$('.mainMenu').removeClass('act');
+			}
+	});
+	var mybutton = document.getElementById("myBtn");
+	
+	// When the user scrolls down 20px from the top of the document, show the button
+	window.onscroll = function() {scrollFunction()};
+	
+	function scrollFunction() {
+	  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+		mybutton.style.display = "block";
+	  } else {
+		mybutton.style.display = "none";
+	  }
+	}
+	
+	// When the user clicks on the button, scroll to the top of the document
+	
+
+
+
+});
+</script>
+
+	

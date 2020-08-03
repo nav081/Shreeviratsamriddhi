@@ -1,0 +1,241 @@
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wWw.ttf) format('truetype');
+  }
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box;
+  }
+  ol,
+  ul {
+    list-style: none;
+  }
+ 
+
+  .join{
+    background:rgb(79 151 160);
+    display: block;
+    font-size: xx-large;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 11px;
+    color: white;
+  }
+  .backg{
+    background: url(https://www.wellmark.com/-/media/sites/blue-at-work/healthy-employees/768x512mainbwgrowthanddevelopmentd.png);
+    background-position: center;
+    background-size: cover;
+    height: 20%;
+  }
+  .backg1{
+    background: url(https://www.renascentwealth.com/images/WHY_US.jpg);
+ 
+  background-size: cover;
+  height: 20%;
+  }
+
+
+  
+  header {
+    background-color:black;
+    
+    height: 103px;
+  }
+  .logo {
+    color: rgb(236, 236, 236);
+   
+    font-size: 41px;
+    line-height: 94px;
+    padding: 0 0 0 20px;
+    text-transform: capitalize;
+  }
+  /* menu button */
+  .menuBtn {
+      display: inline-block;
+    height: 50px;
+    width: 81px;
+    position: absolute;
+    right: 64px;
+    top: 24px;
+    z-index: 101;
+}
+  
+  .menuBtn > span {
+    background-color:rgb(236, 236, 236);
+    border-radius: 1px;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    right: 64px;
+    top: 50%;
+    margin: -1px 0 0 -15px;
+    -webkit-transition: height 100ms;
+    transition: height 100ms;
+  }
+  .menuBtn > span:after,
+  .menuBtn > span:before {
+    content: '';
+    background-color: rgb(236, 236, 236);
+    border-radius: 1px;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    margin-left: -15px;
+    -webkit-transition: all 200ms;
+    transition: all 200ms;
+  }
+  .menuBtn > span:after {
+    top: -7px;
+  }
+  .menuBtn > span:before {
+    bottom: -7px;
+  }
+  .menuBtn.act > span {
+    height: 0;
+  }
+  .menuBtn.act > span:after,
+  .menuBtn.act > span:before {
+    background-color: #008877;
+    top: 1px;
+  }
+  .menuBtn.act > span:after {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .menuBtn.act > span:before {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  /* main menu block */
+  .mainMenu {
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    height: 100%;
+    width: 100%;
+    display: table;
+    text-align: center;
+    opacity: 0;
+    -webkit-transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  .mainMenu.act {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .mainMenu.act ul li {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  .mainMenu ul {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .mainMenu li {
+    padding: 8px 0;
+    -webkit-transition: all 400ms 510ms;
+    transition: all 400ms 510ms;
+    opacity: 0;
+  }
+  .mainMenu li:nth-child(odd) {
+    -webkit-transform: translateX(30%);
+            transform: translateX(30%);
+  }
+  .mainMenu li:nth-child(even) {
+    -webkit-transform: translateX(-30%);
+            transform: translateX(-30%);
+  }
+  .mainMenu li:last-child {
+    -webkit-transform: none;
+            transform: none;
+  }
+  .mainMenu a {
+    color: #19b698;
+    display: inline-block;
+    font-size: 47px;
+    margin-bottom: 47px;
+}
+  .mainMenu a.suBtn {
+    color: #fff;
+  }
+  /* sign up button */
+  .suBtn {
+    background-color: #19b698;
+    border-radius: 5px;
+    padding: 10px 20px;
+  }
+  .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+  }
+  
+  .fa-facebook {
+    width: 100%;
+    background: #3B5998;
+    color: white;
+  }
+  
+  .fa-twitter {
+    width: 100%;
+    background: #55ACEE;
+    color: white;
+  }
+  
+  .fa-google {
+    width: 100%;
+    background: #dd4b39;
+    color: white;
+  }
+  
+  .fa-linkedin {
+    width: 100%;
+    background: #007bb5;
+    color: white;
+  }
+  .banner{
+      background: url("https://www.usbiowa.com/webres/Image/Business-banking/banner-bus-loans.jpg");
+     
+      width: 100%;
+      height: 31%;
+      background-size: cover;
+      background-repeat: no-repeat;
+  }
+  #kaalipatti{
+    width: 100%;
+    background: black;
+    height: 300px;
+  }
+  #myBtn{
+    left: 98px;
+    display: inline-block;
+    width: 258px;
+    text-align: center;
+    color: white;
+    background: black;
+    float: right;
+    font-size: xx-large;
+    border: 0px;
+  }
